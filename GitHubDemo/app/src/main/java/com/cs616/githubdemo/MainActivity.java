@@ -1,10 +1,13 @@
 package com.cs616.githubdemo;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -17,6 +20,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         pressMeButton = (Button) findViewById(R.id.pressMeButton_Main);
+        pressMeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Press Me", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
